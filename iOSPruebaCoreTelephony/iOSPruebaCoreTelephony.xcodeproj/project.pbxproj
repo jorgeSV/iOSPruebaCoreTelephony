@@ -17,6 +17,8 @@
 		AE8EC0CD18C4DEBE0043239C /* iOSPruebaCoreTelephony.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AE8EC0CB18C4DEBE0043239C /* iOSPruebaCoreTelephony.xcdatamodeld */; };
 		AE8EC0CF18C4DEBE0043239C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE8EC0CE18C4DEBE0043239C /* Images.xcassets */; };
 		AE8EC0EE18C4DF510043239C /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE8EC0ED18C4DF510043239C /* Storyboard.storyboard */; };
+		AE8EC0F118C4E90A0043239C /* PCTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8EC0F018C4E90A0043239C /* PCTViewController.m */; };
+		AE8EC0F318C4F2530043239C /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE8EC0F218C4F2530043239C /* CoreTelephony.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,9 @@
 		AE8EC0CE18C4DEBE0043239C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		AE8EC0D518C4DEBE0043239C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = System/Library/Frameworks/XCTest.framework; sourceTree = SDKROOT; };
 		AE8EC0ED18C4DF510043239C /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		AE8EC0EF18C4E90A0043239C /* PCTViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PCTViewController.h; path = Classes/PCTViewController.h; sourceTree = "<group>"; };
+		AE8EC0F018C4E90A0043239C /* PCTViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PCTViewController.m; path = Classes/PCTViewController.m; sourceTree = "<group>"; };
+		AE8EC0F218C4F2530043239C /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE8EC0F318C4F2530043239C /* CoreTelephony.framework in Frameworks */,
 				AE8EC0BA18C4DEBE0043239C /* CoreGraphics.framework in Frameworks */,
 				AE8EC0BE18C4DEBE0043239C /* CoreData.framework in Frameworks */,
 				AE8EC0BC18C4DEBE0043239C /* UIKit.framework in Frameworks */,
@@ -72,6 +78,7 @@
 		AE8EC0B618C4DEBE0043239C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AE8EC0F218C4F2530043239C /* CoreTelephony.framework */,
 				AE8EC0B718C4DEBE0043239C /* Foundation.framework */,
 				AE8EC0B918C4DEBE0043239C /* CoreGraphics.framework */,
 				AE8EC0BB18C4DEBE0043239C /* UIKit.framework */,
@@ -88,6 +95,8 @@
 				AE8EC0CB18C4DEBE0043239C /* iOSPruebaCoreTelephony.xcdatamodeld */,
 				AE8EC0C818C4DEBE0043239C /* PCTAppDelegate.h */,
 				AE8EC0C918C4DEBE0043239C /* PCTAppDelegate.m */,
+				AE8EC0EF18C4E90A0043239C /* PCTViewController.h */,
+				AE8EC0F018C4E90A0043239C /* PCTViewController.m */,
 				AE8EC0CE18C4DEBE0043239C /* Images.xcassets */,
 				AE8EC0C018C4DEBE0043239C /* Supporting Files */,
 			);
@@ -192,6 +201,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE8EC0F118C4E90A0043239C /* PCTViewController.m in Sources */,
 				AE8EC0CA18C4DEBE0043239C /* PCTAppDelegate.m in Sources */,
 				AE8EC0CD18C4DEBE0043239C /* iOSPruebaCoreTelephony.xcdatamodeld in Sources */,
 				AE8EC0C618C4DEBE0043239C /* main.m in Sources */,
@@ -270,6 +280,7 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=0";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -290,6 +301,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iOSPruebaCoreTelephony/iOSPruebaCoreTelephony-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG_MODE=1",
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = "iOSPruebaCoreTelephony/iOSPruebaCoreTelephony-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -305,6 +320,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iOSPruebaCoreTelephony/iOSPruebaCoreTelephony-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG_MODE=0";
 				INFOPLIST_FILE = "iOSPruebaCoreTelephony/iOSPruebaCoreTelephony-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
