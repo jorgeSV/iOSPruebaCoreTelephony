@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--View Controller - Favorites-->
+        <!--Favoritos View Controller - Favorites-->
         <scene sceneID="f0s-vf-ypm">
             <objects>
-                <viewController storyboardIdentifier="Item01VC" title="Favorites" id="pt7-zI-UqQ" customClass="PCTViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Item01VC" title="Favorites" id="pt7-zI-UqQ" customClass="PCTFavoritosViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9Ig-qE-gJX"/>
                         <viewControllerLayoutGuide type="bottom" id="mpl-4k-apF"/>
@@ -101,7 +101,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tsI-XM-Yd4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2523" y="1287"/>
+            <point key="canvasLocation" x="2600" y="1287"/>
         </scene>
         <!--View Controller - More-->
         <scene sceneID="pfg-Fv-CiP">

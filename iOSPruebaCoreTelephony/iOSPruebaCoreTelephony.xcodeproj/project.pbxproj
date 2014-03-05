@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE3604D418C753BD00404EB5 /* PCTFavoritosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3604D318C753BD00404EB5 /* PCTFavoritosViewController.m */; };
+		AE3604D718C7575800404EB5 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE3604D518C7575800404EB5 /* AddressBook.framework */; };
+		AE3604D818C7575800404EB5 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE3604D618C7575800404EB5 /* AddressBookUI.framework */; };
 		AE8EC0B818C4DEBE0043239C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE8EC0B718C4DEBE0043239C /* Foundation.framework */; };
 		AE8EC0BA18C4DEBE0043239C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE8EC0B918C4DEBE0043239C /* CoreGraphics.framework */; };
 		AE8EC0BC18C4DEBE0043239C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE8EC0BB18C4DEBE0043239C /* UIKit.framework */; };
@@ -22,6 +25,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AE3604D218C753BD00404EB5 /* PCTFavoritosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCTFavoritosViewController.h; sourceTree = "<group>"; };
+		AE3604D318C753BD00404EB5 /* PCTFavoritosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCTFavoritosViewController.m; sourceTree = "<group>"; };
+		AE3604D518C7575800404EB5 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		AE3604D618C7575800404EB5 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		AE8EC0B418C4DEBE0043239C /* iOSPruebaCoreTelephony.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSPruebaCoreTelephony.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE8EC0B718C4DEBE0043239C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AE8EC0B918C4DEBE0043239C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -47,6 +54,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE3604D718C7575800404EB5 /* AddressBook.framework in Frameworks */,
+				AE3604D818C7575800404EB5 /* AddressBookUI.framework in Frameworks */,
 				AE8EC0F318C4F2530043239C /* CoreTelephony.framework in Frameworks */,
 				AE8EC0BA18C4DEBE0043239C /* CoreGraphics.framework in Frameworks */,
 				AE8EC0BE18C4DEBE0043239C /* CoreData.framework in Frameworks */,
@@ -58,6 +67,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AE3604D118C7539700404EB5 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				AE8EC0C818C4DEBE0043239C /* PCTAppDelegate.h */,
+				AE8EC0C918C4DEBE0043239C /* PCTAppDelegate.m */,
+				AE8EC0EF18C4E90A0043239C /* PCTViewController.h */,
+				AE8EC0F018C4E90A0043239C /* PCTViewController.m */,
+				AE3604D218C753BD00404EB5 /* PCTFavoritosViewController.h */,
+				AE3604D318C753BD00404EB5 /* PCTFavoritosViewController.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
 		AE8EC0AB18C4DEBE0043239C = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +100,8 @@
 		AE8EC0B618C4DEBE0043239C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AE3604D518C7575800404EB5 /* AddressBook.framework */,
+				AE3604D618C7575800404EB5 /* AddressBookUI.framework */,
 				AE8EC0F218C4F2530043239C /* CoreTelephony.framework */,
 				AE8EC0B718C4DEBE0043239C /* Foundation.framework */,
 				AE8EC0B918C4DEBE0043239C /* CoreGraphics.framework */,
@@ -93,11 +117,7 @@
 			children = (
 				AE8EC0ED18C4DF510043239C /* Storyboard.storyboard */,
 				AE8EC0CB18C4DEBE0043239C /* iOSPruebaCoreTelephony.xcdatamodeld */,
-				AE8EC0C818C4DEBE0043239C /* PCTAppDelegate.h */,
-				AE8EC0C918C4DEBE0043239C /* PCTAppDelegate.m */,
-				AE8EC0EF18C4E90A0043239C /* PCTViewController.h */,
-				AE8EC0F018C4E90A0043239C /* PCTViewController.m */,
-				AE8EC0CE18C4DEBE0043239C /* Images.xcassets */,
+				AE3604D118C7539700404EB5 /* Classes */,
 				AE8EC0C018C4DEBE0043239C /* Supporting Files */,
 			);
 			path = iOSPruebaCoreTelephony;
@@ -106,6 +126,7 @@
 		AE8EC0C018C4DEBE0043239C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AE8EC0CE18C4DEBE0043239C /* Images.xcassets */,
 				AE8EC0C118C4DEBE0043239C /* iOSPruebaCoreTelephony-Info.plist */,
 				AE8EC0C218C4DEBE0043239C /* InfoPlist.strings */,
 				AE8EC0C518C4DEBE0043239C /* main.m */,
@@ -202,6 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE8EC0F118C4E90A0043239C /* PCTViewController.m in Sources */,
+				AE3604D418C753BD00404EB5 /* PCTFavoritosViewController.m in Sources */,
 				AE8EC0CA18C4DEBE0043239C /* PCTAppDelegate.m in Sources */,
 				AE8EC0CD18C4DEBE0043239C /* iOSPruebaCoreTelephony.xcdatamodeld in Sources */,
 				AE8EC0C618C4DEBE0043239C /* main.m in Sources */,
@@ -347,6 +369,7 @@
 				AE8EC0E818C4DEBE0043239C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
