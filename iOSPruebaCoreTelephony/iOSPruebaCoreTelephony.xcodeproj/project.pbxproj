@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE1CE5F918C9EF01007381B7 /* PCTContactoDetalleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE1CE5F818C9EF01007381B7 /* PCTContactoDetalleViewController.m */; };
+		AE2024DE18C8A300004A610D /* PCTContactosTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE2024DD18C8A300004A610D /* PCTContactosTableViewController.m */; };
+		AE2024E118C8A7CC004A610D /* PCTContacto.m in Sources */ = {isa = PBXBuildFile; fileRef = AE2024E018C8A7CC004A610D /* PCTContacto.m */; };
 		AE3604D418C753BD00404EB5 /* PCTFavoritosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3604D318C753BD00404EB5 /* PCTFavoritosViewController.m */; };
 		AE3604D718C7575800404EB5 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE3604D518C7575800404EB5 /* AddressBook.framework */; };
 		AE3604D818C7575800404EB5 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE3604D618C7575800404EB5 /* AddressBookUI.framework */; };
@@ -25,6 +28,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AE1CE5F718C9EF01007381B7 /* PCTContactoDetalleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCTContactoDetalleViewController.h; sourceTree = "<group>"; };
+		AE1CE5F818C9EF01007381B7 /* PCTContactoDetalleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCTContactoDetalleViewController.m; sourceTree = "<group>"; };
+		AE2024DC18C8A300004A610D /* PCTContactosTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCTContactosTableViewController.h; sourceTree = "<group>"; };
+		AE2024DD18C8A300004A610D /* PCTContactosTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCTContactosTableViewController.m; sourceTree = "<group>"; };
+		AE2024DF18C8A7CC004A610D /* PCTContacto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCTContacto.h; sourceTree = "<group>"; };
+		AE2024E018C8A7CC004A610D /* PCTContacto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCTContacto.m; sourceTree = "<group>"; };
 		AE3604D218C753BD00404EB5 /* PCTFavoritosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCTFavoritosViewController.h; sourceTree = "<group>"; };
 		AE3604D318C753BD00404EB5 /* PCTFavoritosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCTFavoritosViewController.m; sourceTree = "<group>"; };
 		AE3604D518C7575800404EB5 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
@@ -76,6 +85,12 @@
 				AE8EC0F018C4E90A0043239C /* PCTViewController.m */,
 				AE3604D218C753BD00404EB5 /* PCTFavoritosViewController.h */,
 				AE3604D318C753BD00404EB5 /* PCTFavoritosViewController.m */,
+				AE2024DC18C8A300004A610D /* PCTContactosTableViewController.h */,
+				AE2024DD18C8A300004A610D /* PCTContactosTableViewController.m */,
+				AE1CE5F718C9EF01007381B7 /* PCTContactoDetalleViewController.h */,
+				AE1CE5F818C9EF01007381B7 /* PCTContactoDetalleViewController.m */,
+				AE2024DF18C8A7CC004A610D /* PCTContacto.h */,
+				AE2024E018C8A7CC004A610D /* PCTContacto.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -168,6 +183,14 @@
 				TargetAttributes = {
 					AE8EC0B318C4DEBE0043239C = {
 						DevelopmentTeam = 8TJVP56DTS;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.InterAppAudio = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -222,9 +245,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE2024DE18C8A300004A610D /* PCTContactosTableViewController.m in Sources */,
 				AE8EC0F118C4E90A0043239C /* PCTViewController.m in Sources */,
+				AE2024E118C8A7CC004A610D /* PCTContacto.m in Sources */,
 				AE3604D418C753BD00404EB5 /* PCTFavoritosViewController.m in Sources */,
 				AE8EC0CA18C4DEBE0043239C /* PCTAppDelegate.m in Sources */,
+				AE1CE5F918C9EF01007381B7 /* PCTContactoDetalleViewController.m in Sources */,
 				AE8EC0CD18C4DEBE0043239C /* iOSPruebaCoreTelephony.xcdatamodeld in Sources */,
 				AE8EC0C618C4DEBE0043239C /* main.m in Sources */,
 			);
@@ -321,6 +347,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iOSPruebaCoreTelephony/iOSPruebaCoreTelephony-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -330,6 +357,7 @@
 				INFOPLIST_FILE = "iOSPruebaCoreTelephony/iOSPruebaCoreTelephony-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -340,12 +368,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iOSPruebaCoreTelephony/iOSPruebaCoreTelephony-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG_MODE=0";
 				INFOPLIST_FILE = "iOSPruebaCoreTelephony/iOSPruebaCoreTelephony-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

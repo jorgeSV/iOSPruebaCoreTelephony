@@ -32,8 +32,8 @@
     }
     
     //Requesting permission to access address book
-    
-    ABAddressBookRef addressBook = ABAddressBookCreate();
+    /*CFErrorRef *error;
+    ABAddressBookRef addressBook = ABAddressBookCreateWithOptions(0, error);// = ABAddressBookCreate();
     
     __block BOOL accessGranted = NO;
     
@@ -59,7 +59,7 @@
     if (accessGranted)
     {
         [self getContactsWithAddressBook:addressBook];
-    }
+    }*/
     
     return YES;
 }
@@ -84,7 +84,22 @@
         firstName = ABRecordCopyValue(ref, kABPersonFirstNameProperty);
         lastName  = ABRecordCopyValue(ref, kABPersonLastNameProperty);
         
-        [dOfPerson setObject:[NSString stringWithFormat:@"%@ %@", firstName, lastName] forKey:@"name"];
+        NSString *nombre = @"";
+        
+        if(firstName)
+            nombre = [NSString stringWithFormat:@"%@", firstName];
+        
+        if(lastName)
+        {
+            if(nombre.length)
+                nombre = [nombre stringByAppendingString:[NSString stringWithFormat:@" %@", lastName]];
+            else
+                nombre = [NSString stringWithFormat:@"%@", lastName];
+        }
+        
+        nombre = [NSString stringWithUTF8String:[nombre UTF8String]];
+        
+        [dOfPerson setObject:nombre forKey:@"name"];
         
         //For Email ids
         ABMutableMultiValueRef eMail  = ABRecordCopyValue(ref, kABPersonEmailProperty);
@@ -94,13 +109,23 @@
         }
         
         //For Phone number
-        NSString* mobileLabel;
+        //NSString* mobileLabel;
+        
+        int cont = 0;
         
         for(CFIndex i = 0; i < ABMultiValueGetCount(phones); i++)
         {
-            mobileLabel = (__bridge NSString*)ABMultiValueCopyLabelAtIndex(phones, i);
+            //mobileLabel = (__bridge NSString*)ABMultiValueCopyLabelAtIndex(phones, i);
+            NSString *strPhone = [(__bridge NSString*)ABMultiValueCopyValueAtIndex(phones, i) stringByReplacingOccurrencesOfString:@"XXXXX" withString:@""];
             
-            [dOfPerson setObject:(__bridge NSString*)ABMultiValueCopyValueAtIndex(phones, i) forKey:@"Phone"];
+            if([self isValidPhoneNumber:strPhone])
+            {
+                [dOfPerson setObject:strPhone forKey:@"Phone"];
+                cont++;
+            }
+            
+            //kABPersonAddressCountryKey
+            //kABPersonAddressCountryCodeKey
             
             /*if([mobileLabel isEqualToString:(NSString *)kABPersonPhoneMobileLabel])
             {
@@ -114,11 +139,46 @@
             
         }
         
-        if(mobileLabel.length)
+        if(cont)
             [_contactList addObject:dOfPerson];
     }
     
-    DLog(@"Contacts = %@", _contactList);
+    //DLog(@"Contacts = %@", _contactList);
+}
+
+- (BOOL) isValidPhoneNumber:(NSString*)phone
+{
+    //NSString *phoneRegex = @"[235689][0-9]{6}([0-9]{3})?";
+    /*NSString *phoneRegex = @"^((\\+)|(00))[0-9]{6,14}$";
+    NSPredicate *test = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", phoneRegex];
+    BOOL result = [test evaluateWithObject:phoneNumber];
+    return result;*/
+    
+    NSError *error = NULL;
+    NSDataDetector *detector = [NSDataDetector dataDetectorWithTypes:NSTextCheckingTypePhoneNumber error:&error];
+    
+    NSRange inputRange = NSMakeRange(0, [phone length]);
+    NSArray *matches = [detector matchesInString:phone options:0 range:inputRange];
+    
+    // no match at all
+    if ([matches count] == 0)
+    {
+        return NO;
+    }
+    
+    // found match but we need to check if it matched the whole string
+    NSTextCheckingResult *result = (NSTextCheckingResult *)[matches objectAtIndex:0];
+    
+    if ([result resultType] == NSTextCheckingTypePhoneNumber && result.range.location == inputRange.location && result.range.length == inputRange.length)
+    {
+        // it matched the whole string
+        return YES;
+    }
+    else
+    {
+        // it only matched partial string
+        return NO;
+    }
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
